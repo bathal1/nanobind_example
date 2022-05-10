@@ -30,6 +30,9 @@ jobs:
       with:
         submodules: true
 
+    - name: Manual build
+      run: pip install ./
+
     - uses: pypa/cibuildwheel@v2.4.0
 
     - name: Verify clean directory
