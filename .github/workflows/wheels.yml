@@ -31,7 +31,7 @@ jobs:
         submodules: true
 
     - name: Manual build
-      run: pip install nanobind scikit-build; python setup.py bdist_wheel
+      run: pip install nanobind scikit-build; python setup.py bdist_wheel; rm -rf _skbuild
 
     - uses: pypa/cibuildwheel@v2.4.0
 
