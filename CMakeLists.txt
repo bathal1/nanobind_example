@@ -20,9 +20,7 @@ endif()
 
 find_package(Python COMPONENTS Interpreter Development.Module REQUIRED)
 
-find_package(JPEG REQUIRED)
 find_package(LAPACK REQUIRED)
-find_package(BLAS REQUIRED)
 
 # Run `nanobind.cmake_dir()` from Python to detect install location
 execute_process(

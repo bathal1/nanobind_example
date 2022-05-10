@@ -14,6 +14,7 @@ env:
   CIBW_TEST_COMMAND: pytest {project}/tests
   CIBW_TEST_REQUIRES: pytest
   CIBW_BUILD: "cp38-manylinux_x86_64 wheel" # Skip PyPy, 32-bit builds
+  CIBW_BEFORE_ALL_LINUX: 'yum install -y lapack-devel'
   CIBW_ENVIRONMENT_MACOS: MACOSX_DEPLOYMENT_TARGET=10.14
 
 jobs:
@@ -30,8 +31,8 @@ jobs:
       with:
         submodules: true
 
-    - name: Manual build
-      run: pip install nanobind scikit-build; python setup.py bdist_wheel; rm -rf _skbuild
+    # - name: Manual build
+    #   run: pip install nanobind scikit-build; python setup.py bdist_wheel; rm -rf _skbuild
 
     - uses: pypa/cibuildwheel@v2.4.0
 
