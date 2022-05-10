@@ -18,6 +18,12 @@ elseif (MSVC)
   find_package(Python)
 endif()
 
+find_package(LAPACK)
+find_package(BLAS)
+
+message(STATUS "${LAPACK_LIBRARIES} ")
+message(STATUS "${BLAS_LIBRARIES} ")
+
 find_package(Python COMPONENTS Interpreter Development.Module REQUIRED)
 
 # Run `nanobind.cmake_dir()` from Python to detect install location
