@@ -18,8 +18,8 @@ elseif (MSVC)
   find_package(Python)
 endif()
 
-find_package(LAPACK)
-find_package(BLAS)
+find_package(LAPACK REQUIRED)
+find_package(BLAS REQUIRED)
 
 message(STATUS "${LAPACK_LIBRARIES} ")
 message(STATUS "${BLAS_LIBRARIES} ")
